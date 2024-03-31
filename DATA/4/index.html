@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <table id="tbl">
+        <tr>
+            <td>Поле раз</td>
+            <td>Поле два</td>
+            <td>Поле три</td>
+            <td>Поле четыре</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="field1[]" id="field1" /></td>
+            <td><input type="text" name="field2[]" id="field2" /></td>
+            <td><input type="text" name="field3[]" id="field3" /></td>
+            <td><input type="text" name="field4[]" id="field4" /></td>
+            <td><input type="button" onclick="addRow('main');return false;" value="Сохранить"/></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function addRow(id){
+            var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
+            var f1 = document.getElementById("field1").value
+            var f2 = document.getElementById("field2").value
+            var f3 = document.getElementById("field3").value
+            var f4 = document.getElementById("field4").value
+            var row = document.createElement("TR")
+            var td1 = document.createElement("TD")
+            td1.appendChild(document.createTextNode(f1))
+            var td2 = document.createElement("TD")
+            td2.appendChild (document.createTextNode(f2))
+            var td3 = document.createElement("TD")
+            td3.appendChild (document.createTextNode(f3))
+            var td4 = document.createElement("TD")
+            td4.appendChild (document.createTextNode(f4))
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            row.appendChild(td4);
+            tbody.appendChild(row);
+          }
+        </script>
+</body>
+</html>
